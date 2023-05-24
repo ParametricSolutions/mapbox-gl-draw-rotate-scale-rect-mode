@@ -17,15 +17,16 @@ export function TxRectModeDemo(demoParams) {
   this._nextFeatureId = 1
 }
 
-TxRectModeDemo.prototype.start = function () {
-  mapboxgl.accessToken = 'pk.eyJ1IjoiZHJ5a292YW5vdiIsImEiOiJjazM0OG9hYW4wenR4M2xtajVseW1qYjY3In0.YnbkeuaBiSaDOn7eYDAXsQ'
-  this._map = new mapboxgl.Map({
-    container: 'map', // container id
-    style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
-    center: this._demoParams.mapCenter,
-    zoom: this._demoParams.mapZoom // starting zoom
-    // fadeDuration: 0 //
-  })
+TxRectModeDemo.prototype.start = function (map) {
+  //mapboxgl.accessToken = 'pk.eyJ1IjoiZHJ5a292YW5vdiIsImEiOiJjazM0OG9hYW4wenR4M2xtajVseW1qYjY3In0.YnbkeuaBiSaDOn7eYDAXsQ'
+  //   this._map = new mapboxgl.Map({
+  //     container: 'map', // container id
+  //     style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+  //     center: this._demoParams.mapCenter,
+  //     zoom: this._demoParams.mapZoom // starting zoom
+  //     // fadeDuration: 0 //
+  //   })
+  this._map = map
 
   this._map.on('load', this._onMapLoad.bind(this))
 }
